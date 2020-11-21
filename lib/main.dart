@@ -50,7 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
     Size size = MediaQuery.of(context).size;
     
     return new SplashScreen(
-      seconds: 14,
+      seconds: 3,
       navigateAfterSeconds: new AfterSplash(),
       title: new Text('Welcome to Deeper Life Campus',
       style: new TextStyle(
