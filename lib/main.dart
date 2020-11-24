@@ -52,11 +52,13 @@ class _MyHomePageState extends State<MyHomePage> {
     return new SplashScreen(
       seconds: 3,
       navigateAfterSeconds: new AfterSplash(),
-      title: new Text('Welcome to Deeper Life Campus',
+      title: new Text('Welcome to Deeper Life Campus Fellowship Uganda',
       style: new TextStyle(
         fontWeight: FontWeight.bold,
-        fontSize: 20.0
-      ),),
+        fontSize: 20.0,
+      ),
+      textAlign: TextAlign.center,
+      ),
       image: Image.asset(
         "assets/images/logo.jpg",
         width: size.width * 0.35,
