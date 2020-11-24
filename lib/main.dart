@@ -1,7 +1,7 @@
 import 'package:deeper_life_campus/constants.dart';
+import 'package:deeper_life_campus/screens/wrapper.dart';
 import 'package:flutter/material.dart';
 import 'package:splashscreen/splashscreen.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 void main() {
   runApp(MyApp());
@@ -76,19 +76,6 @@ class AfterSplash extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-      title: Text('Deeper Life Campus Fellowship Uganda'),
-      automaticallyImplyLeading: false
-      ),
-      body: new Center(
-        child: new Text("Done!",
-        style: new TextStyle(
-          fontWeight: FontWeight.bold,
-          fontSize: 30.0
-        ),),
-
-      ),
-    );
+    return Wrapper();
   }
 }
