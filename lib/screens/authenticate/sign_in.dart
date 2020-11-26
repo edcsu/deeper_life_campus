@@ -1,5 +1,8 @@
+import 'package:deeper_life_campus/components/rounded_input_field.dart';
+import 'package:deeper_life_campus/constants.dart';
 import 'package:deeper_life_campus/screens/services/auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class SignIn extends StatefulWidget {
   SignIn({Key key}) : super(key: key);
@@ -14,8 +17,38 @@ class _SignInState extends State<SignIn> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-       child: Text('sign in to deeper life'),
+    Size size = MediaQuery.of(context).size;
+
+    return Scaffold(
+      body: Container(
+        width: double.infinity,
+        height: size.height,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              "LOGIN",
+              style: TextStyle(
+                fontWeight: FontWeight.bold
+              ),
+            ),
+            Container(
+              width: size.width * 0.8,
+              child: SvgPicture.asset(
+                "assets/images/undraw_sign_in.svg",
+                height: size.height * 0.35,
+              ),
+            ),
+            RoundedInputField(
+              hintText: "Your Email",
+              onChanged: (value) {
+                
+              },
+            ),
+          ],
+        ),
+      )
     );
   }
 }
+
