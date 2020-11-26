@@ -43,46 +43,54 @@ class _DashboardBodyState extends State<DashboardBody> {
             crossAxisSpacing: 10,
             padding: EdgeInsets.only(left: 16, right:16),
             children: itemList.map((item) => 
-              Container(
-                margin: EdgeInsets.symmetric(vertical: 10),
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [
-                      item.startColor,
-                      item.endColor,
-                    ],
+              Material(
+                color: Colors.transparent,
+                child: InkWell(
+                  onTap: () {
+                    
+                  },
+                  child: Container(
+                  margin: EdgeInsets.symmetric(vertical: 10),
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [
+                        item.startColor,
+                        item.endColor,
+                      ],
+                    ),
+                    borderRadius: BorderRadius.circular(10),
                   ),
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Icon(
-                      item.icon,
-                      color: Colors.white,
-                      size: 64,
+                  child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Icon(
+                          item.icon,
+                          color: Colors.white,
+                          size: 64,
+                        ),
+                        SizedBox(
+                          height: 14,
+                        ),
+                        Text(
+                          item.title,
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 25,
+                          ),
+                        ),
+                        SizedBox(
+                          height: 14,
+                        ),
+                        Text(
+                          item.subTitle,
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                          ),
+                        ),
+                      ],
                     ),
-                    SizedBox(
-                      height: 14,
-                    ),
-                    Text(
-                      item.title,
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 25,
-                      ),
-                    ),
-                    SizedBox(
-                      height: 14,
-                    ),
-                    Text(
-                      item.subTitle,
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 16,
-                      ),
-                    ),
-                  ],
+                  ),
                 ),
               ),        
             ).toList(),
