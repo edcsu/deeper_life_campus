@@ -3,6 +3,7 @@ import 'package:deeper_life_campus/components/rounded_input_field.dart';
 import 'package:deeper_life_campus/components/rounded_password_field.dart';
 import 'package:deeper_life_campus/components/text_field_container.dart';
 import 'package:deeper_life_campus/constants.dart';
+import 'package:deeper_life_campus/screens/home/home.dart';
 import 'package:deeper_life_campus/screens/services/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -55,7 +56,14 @@ class _SignInState extends State<SignIn> {
             RoundedButton(
               text: "LOGIN",
               press: () {
-
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return Home();
+                    },
+                  ),
+                );
               },
             ),
           ],
