@@ -12,15 +12,15 @@ class DashboardBody extends StatefulWidget {
 class _DashboardBodyState extends State<DashboardBody> {
    List<DashItem> itemList = [
     new DashItem(
-      title: "Add Members",
-      subTitle: "A form to add members.",
+      title: "Add a Member",
+      subTitle: "A form to add a member.",
       icon: Icons.person_add,
       startColor: Color(0xFFD53369),
       endColor: Color(0xFFDAAE51),
     ),
     new DashItem(
       title: "Add Attendance",
-      subTitle: "A form to add attendees.",
+      subTitle: "A form to add attendance details.",
       icon: Icons.group_add,
       startColor: Color(0xFF00D2FF),
       endColor: Color(0xFF3A47D5),),
@@ -67,14 +67,20 @@ class _DashboardBodyState extends State<DashboardBody> {
                     ),
                     Text(
                       item.title,
-                      style: Theme.of(context).textTheme.headline5,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 25,
+                      ),
                     ),
                     SizedBox(
                       height: 14,
                     ),
                     Text(
                       item.subTitle,
-                      style: Theme.of(context).textTheme.subtitle1,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                      ),
                     ),
                   ],
                 ),
