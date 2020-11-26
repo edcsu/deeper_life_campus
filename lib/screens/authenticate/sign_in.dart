@@ -1,6 +1,7 @@
 import 'package:deeper_life_campus/components/rounded_button.dart';
 import 'package:deeper_life_campus/components/rounded_input_field.dart';
 import 'package:deeper_life_campus/components/rounded_password_field.dart';
+import 'package:deeper_life_campus/constants.dart';
 import 'package:deeper_life_campus/screens/home/home.dart';
 import 'package:deeper_life_campus/screens/services/auth.dart';
 import 'package:flutter/material.dart';
@@ -27,17 +28,19 @@ class _SignInState extends State<SignIn> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              "LOGIN",
-              style: TextStyle(
-                fontWeight: FontWeight.bold
-              ),
-            ),
             Container(
               width: size.width * 0.8,
               child: SvgPicture.asset(
-                "assets/images/undraw_sign_in.svg",
+                "assets/images/logo.svg",
                 height: size.height * 0.3,
+              ),
+            ),
+            Text(
+              "LOGIN",
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 32,
+                color: kPrimaryColor,
               ),
             ),
             RoundedInputField(
