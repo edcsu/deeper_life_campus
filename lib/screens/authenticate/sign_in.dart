@@ -1,4 +1,7 @@
+import 'package:deeper_life_campus/components/rounded_button.dart';
 import 'package:deeper_life_campus/components/rounded_input_field.dart';
+import 'package:deeper_life_campus/components/rounded_password_field.dart';
+import 'package:deeper_life_campus/components/text_field_container.dart';
 import 'package:deeper_life_campus/constants.dart';
 import 'package:deeper_life_campus/screens/services/auth.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +21,6 @@ class _SignInState extends State<SignIn> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-
     return Scaffold(
       body: Container(
         width: double.infinity,
@@ -36,7 +38,7 @@ class _SignInState extends State<SignIn> {
               width: size.width * 0.8,
               child: SvgPicture.asset(
                 "assets/images/undraw_sign_in.svg",
-                height: size.height * 0.35,
+                height: size.height * 0.3,
               ),
             ),
             RoundedInputField(
@@ -45,10 +47,22 @@ class _SignInState extends State<SignIn> {
                 
               },
             ),
+            RoundedPasswordField(
+              onChanged: (value) {
+                
+              },
+            ),
+            RoundedButton(
+              text: "LOGIN",
+              press: () {
+
+              },
+            ),
           ],
         ),
       )
     );
   }
 }
+
 
