@@ -1,7 +1,7 @@
 import 'package:deeper_life_campus/models/dash_item.dart';
 import 'package:deeper_life_campus/screens/forms/add_attendance.dart';
 import 'package:deeper_life_campus/screens/forms/add_finance.dart';
-import 'package:deeper_life_campus/screens/forms/add_member.dart';
+import 'package:deeper_life_campus/screens/forms/addmember/add_member.dart';
 import 'package:flutter/material.dart';
 import 'package:gradient_widgets/gradient_widgets.dart';
 

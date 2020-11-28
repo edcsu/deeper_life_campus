@@ -1,4 +1,5 @@
 import 'package:deeper_life_campus/constants.dart';
+import 'package:deeper_life_campus/screens/forms/addmember/components/add_member_body.dart';
 import 'package:flutter/material.dart'; 
 
 class AddMember extends StatefulWidget {
@@ -22,7 +23,7 @@ class _AddMemberState extends State<AddMember> {
           ),
         ),
       ),
-      body: Text("Add member"),
+      body: AddMemberBody(),
     );
   }
 }
