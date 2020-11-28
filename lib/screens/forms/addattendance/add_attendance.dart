@@ -1,4 +1,5 @@
 import 'package:deeper_life_campus/constants.dart';
+import 'package:deeper_life_campus/screens/forms/addattendance/components/add_attendance_body.dart';
 import 'package:flutter/material.dart'; 
 
 class AddAttendance extends StatefulWidget {
@@ -22,7 +23,7 @@ class _AddMemberState extends State<AddAttendance> {
           ),
         ),
       ),
-      body: Text("Add Attendance"),
+      body: AddAttendanceBody(),
     );
   }
 }

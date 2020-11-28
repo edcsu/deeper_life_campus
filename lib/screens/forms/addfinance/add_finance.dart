@@ -1,4 +1,5 @@
 import 'package:deeper_life_campus/constants.dart';
+import 'package:deeper_life_campus/screens/forms/addfinance/components/add_finance_body.dart';
 import 'package:flutter/material.dart'; 
 
 class AddFinance extends StatefulWidget {
@@ -22,7 +23,7 @@ class _AddMemberState extends State<AddFinance> {
           ),
         ),
       ),
-      body: Text("Add finance"),
+      body: AddFinanceBody(),
     );
   }
 }
