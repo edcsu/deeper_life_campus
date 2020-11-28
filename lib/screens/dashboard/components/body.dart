@@ -1,6 +1,6 @@
 import 'package:deeper_life_campus/models/dash_item.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:gradient_widgets/gradient_widgets.dart';
 
 class DashboardBody extends StatefulWidget {
   DashboardBody({Key key}) : super(key: key);
@@ -43,26 +43,31 @@ class _DashboardBodyState extends State<DashboardBody> {
             crossAxisSpacing: 10,
             padding: EdgeInsets.only(left: 16, right:16),
             children: itemList.map((item) => 
-              Material(
-                color: Colors.transparent,
-                child: InkWell(
-                  onTap: () {
-                  },
-                  child: Container(
-                  margin: EdgeInsets.symmetric(vertical: 10),
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [
-                        item.startColor,
-                        item.endColor,
-                      ],
-                    ),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Icon(
+              Container(
+            margin: EdgeInsets.only(left: 20, right: 15, top: 10, bottom: 10),
+            child: GradientCard(
+              gradient:  LinearGradient(
+                colors: [
+                  item.startColor,
+                  item.endColor,
+                ],
+              ),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15.0),
+              ),
+              elevation: 10,
+              child: InkWell(
+                borderRadius: BorderRadius.circular(15.0),
+                splashColor: Colors.white,
+                onTap: () {
+                  // Navigator.push(
+                  //   context,
+                  //   MaterialPageRoute(builder: (context) => Drugcategories()),
+                  // );
+                },
+                child: Column(
+                  children: <Widget>[
+                    Icon(
                           item.icon,
                           color: Colors.white,
                           size: 64,
@@ -87,11 +92,11 @@ class _DashboardBodyState extends State<DashboardBody> {
                             fontSize: 16,
                           ),
                         ),
-                      ],
-                    ),
-                  ),
+                  ],
                 ),
-              ),        
+              ),
+            ),
+          )      
             ).toList(),
           ),
         ),
