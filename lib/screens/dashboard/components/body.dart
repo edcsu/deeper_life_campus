@@ -1,4 +1,7 @@
 import 'package:deeper_life_campus/models/dash_item.dart';
+import 'package:deeper_life_campus/screens/forms/add_attendance.dart';
+import 'package:deeper_life_campus/screens/forms/add_finance.dart';
+import 'package:deeper_life_campus/screens/forms/add_member.dart';
 import 'package:flutter/material.dart';
 import 'package:gradient_widgets/gradient_widgets.dart';
 
@@ -17,19 +20,24 @@ class _DashboardBodyState extends State<DashboardBody> {
       icon: Icons.person_add,
       startColor: Color(0xFFD53369),
       endColor: Color(0xFFDAAE51),
+      formPage: AddMember(),
     ),
     new DashItem(
       title: "Add Attendance",
       subTitle: "A form to add attendance details.",
       icon: Icons.group_add,
       startColor: Color(0xFF00D2FF),
-      endColor: Color(0xFF3A47D5),),
+      endColor: Color(0xFF3A47D5),
+      formPage: AddAttendance()
+    ),
     new DashItem(
       title: "Add Finance",
       subTitle: "A form to add collections.",
       icon: Icons.monetization_on,
       startColor: Color(0xFFFF0099),
-      endColor: Color(0xFF493240),),
+      endColor: Color(0xFF493240),
+      formPage: AddFinance()
+    ),
   ];
 
   @override
@@ -60,38 +68,41 @@ class _DashboardBodyState extends State<DashboardBody> {
                 borderRadius: BorderRadius.circular(15.0),
                 splashColor: Colors.white,
                 onTap: () {
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(builder: (context) => Drugcategories()),
-                  // );
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => item.formPage),
+                  );
                 },
                 child: Column(
                   children: <Widget>[
-                    Icon(
-                          item.icon,
-                          color: Colors.white,
-                          size: 64,
-                        ),
-                        SizedBox(
-                          height: 14,
-                        ),
-                        Text(
-                          item.title,
-                          style: TextStyle(
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 8),
+                      child: Icon(
+                            item.icon,
                             color: Colors.white,
-                            fontSize: 25,
+                            size: 64,
                           ),
-                        ),
-                        SizedBox(
-                          height: 14,
-                        ),
-                        Text(
-                          item.subTitle,
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 16,
-                          ),
-                        ),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                      item.title,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 25,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 14,
+                    ),
+                    Text(
+                      item.subTitle,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                      ),
+                    ),
                   ],
                 ),
               ),

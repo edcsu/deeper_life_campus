@@ -6,11 +6,13 @@ class DashItem {
   IconData icon;
   Color startColor;
   Color endColor;
+  dynamic formPage;
   DashItem({
     this.title,
     this.subTitle,
     this.icon,
     this.startColor,
     this.endColor,
+    this.formPage,
   });
 }
