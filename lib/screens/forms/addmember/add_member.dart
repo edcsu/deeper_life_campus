@@ -2,14 +2,9 @@ import 'package:deeper_life_campus/constants.dart';
 import 'package:deeper_life_campus/screens/forms/addmember/components/add_member_body.dart';
 import 'package:flutter/material.dart'; 
 
-class AddMember extends StatefulWidget {
+class AddMember extends StatelessWidget {
   AddMember({Key key}) : super(key: key);
 
-  @override
-  _AddMemberState createState() => _AddMemberState();
-}
-
-class _AddMemberState extends State<AddMember> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
