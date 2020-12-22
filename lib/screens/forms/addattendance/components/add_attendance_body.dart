@@ -20,7 +20,7 @@ class _AddAttendanceBodyState extends State<AddAttendanceBody> {
     return ReactiveForm(
       formGroup: this.attendanceForm,
       child: Padding(
-        padding: const EdgeInsets.all(12.0),
+        padding: const EdgeInsets.all(20.0),
         child: Column(
           children: <Widget>[
             ReactiveTextField(
