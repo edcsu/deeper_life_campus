@@ -3,7 +3,6 @@ import 'package:deeper_life_campus/constants.dart';
 import 'package:flutter/material.dart';
 
 class RoundedPasswordField extends StatefulWidget {
-
   RoundedPasswordField({Key key}) : super(key: key);
 
   @override
@@ -13,7 +12,7 @@ class RoundedPasswordField extends StatefulWidget {
 class _RoundedPasswordFieldState extends State<RoundedPasswordField> {
   bool _obscurePassword = true;
 
-   void _toggle() {
+  void _toggle() {
     setState(() {
       _obscurePassword = !_obscurePassword;
     });
@@ -33,12 +32,14 @@ class _RoundedPasswordFieldState extends State<RoundedPasswordField> {
                 ),
                 suffixIcon: IconButton(
                     icon: Icon(
-                      _obscurePassword ? Icons.visibility : Icons.visibility_off,
+                      _obscurePassword
+                          ? Icons.visibility
+                          : Icons.visibility_off,
                       color: kPrimaryColor,
                     ),
-                    onPressed: () {_toggle();}),
+                    onPressed: () {
+                      _toggle();
+                    }),
                 border: InputBorder.none)));
   }
 }
-
-
