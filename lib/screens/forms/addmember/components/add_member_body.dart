@@ -139,7 +139,89 @@ class _AddMemberBodyState extends State<AddMemberBody> {
           Flexible(
             flex: 5,
             child: Stepper(
-              steps: steps,
+              steps: <Step>[
+                Step(
+                  title: const Text('Personal Information'),
+                  isActive: _currentStep == 0 ? true : false,
+                  state: _currentStep == 0 ? StepState.editing : StepState.complete,
+                  content: Column(
+                    children: <Widget>[
+                      ReactiveTextField(
+                        formControlName: 'firstName',
+                        decoration: InputDecoration(
+                          labelText: 'First Name',
+                        ),
+                      ),
+                      ReactiveTextField(
+                        formControlName: 'lastName',
+                        decoration: InputDecoration(
+                          labelText: 'Last Name',
+                        ),
+                      ),
+                      ReactiveTextField(
+                        formControlName: 'email',
+                        decoration: InputDecoration(
+                          labelText: 'Email',
+                        ),
+                      ),
+                      ReactiveTextField(
+                        formControlName: 'phoneNumber',
+                        decoration: InputDecoration(
+                          labelText: 'Phone number',
+                        ),
+                      ),
+                      ReactiveTextField(
+                        formControlName: 'dateOfBirth',
+                        decoration: InputDecoration(
+                          labelText: 'Date Of Birth',
+                        ),
+                        keyboardType: TextInputType.number,
+                      ),
+                    ],
+                  ),
+                ),
+                Step(
+                  isActive: _currentStep == 1 ? true : false,
+                  state: _currentStep == 1 ? StepState.editing : StepState.complete,
+                  title: const Text('Campus Information'),
+                  content: Column(
+                    children: <Widget>[
+                      ReactiveTextField(
+                        formControlName: 'department',
+                        decoration: InputDecoration(
+                          labelText: 'Department',
+                        ),
+                      ),
+                      ReactiveTextField(
+                        formControlName: 'program',
+                        decoration: InputDecoration(
+                          labelText: 'Program',
+                        ),
+                      ),
+                      ReactiveTextField(
+                        formControlName: 'country',
+                        decoration: InputDecoration(
+                          labelText: 'country',
+                        ),
+                      ),
+                      ReactiveTextField(
+                        formControlName: 'yearEnrolled',
+                        decoration: InputDecoration(
+                          labelText: 'Year Enrolled',
+                        ),
+                        keyboardType: TextInputType.number,
+                      ),
+                      ReactiveTextField(
+                        formControlName: 'yearGraduated',
+                        decoration: InputDecoration(
+                          labelText: 'Year Graduated',
+                        ),
+                        keyboardType: TextInputType.number,
+                      ),
+                    ],
+                  ),
+                ),
+              ],
               currentStep: _currentStep,
               onStepContinue: next,
               onStepTapped: (step) => goTo(step),
