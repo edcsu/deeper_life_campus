@@ -174,8 +174,20 @@ class _AddMemberBodyState extends State<AddMemberBody> {
                       ),
                       ReactiveTextField(
                         formControlName: 'dateOfBirth',
+                        readOnly: true,
                         decoration: InputDecoration(
                           labelText: 'Date Of Birth',
+                          suffixIcon: ReactiveDatePicker(
+                            formControlName: 'dateOfBirth',
+                            firstDate: DateTime(1960),
+                            lastDate: DateTime(2099),
+                            builder: (context, picker, child) {
+                              return IconButton(
+                                onPressed: picker.showPicker,
+                                icon: Icon(Icons.date_range),
+                              );
+                            },
+                          ),
                         ),
                         keyboardType: TextInputType.number,
                       ),
@@ -210,15 +222,39 @@ class _AddMemberBodyState extends State<AddMemberBody> {
                       ),
                       ReactiveTextField(
                         formControlName: 'yearEnrolled',
+                        readOnly: true,
                         decoration: InputDecoration(
                           labelText: 'Year Enrolled',
+                          suffixIcon: ReactiveDatePicker(
+                            formControlName: 'yearEnrolled',
+                            firstDate: DateTime(1960),
+                            lastDate: DateTime(2099),
+                            builder: (context, picker, child) {
+                              return IconButton(
+                                onPressed: picker.showPicker,
+                                icon: Icon(Icons.date_range),
+                              );
+                            },
+                          ),
                         ),
                         keyboardType: TextInputType.number,
                       ),
                       ReactiveTextField(
                         formControlName: 'yearGraduated',
+                        readOnly: true,
                         decoration: InputDecoration(
                           labelText: 'Year Graduated',
+                          suffixIcon: ReactiveDatePicker(
+                            formControlName: 'yearGraduated',
+                            firstDate: DateTime(1960),
+                            lastDate: DateTime(2099),
+                            builder: (context, picker, child) {
+                              return IconButton(
+                                onPressed: picker.showPicker,
+                                icon: Icon(Icons.date_range),
+                              );
+                            },
+                          ),
                         ),
                         keyboardType: TextInputType.number,
                       ),
