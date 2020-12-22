@@ -143,7 +143,9 @@ class _AddMemberBodyState extends State<AddMemberBody> {
                 Step(
                   title: const Text('Personal Information'),
                   isActive: _currentStep == 0 ? true : false,
-                  state: _currentStep == 0 ? StepState.editing : StepState.complete,
+                  state: _currentStep == 0
+                      ? StepState.editing
+                      : StepState.complete,
                   content: Column(
                     children: <Widget>[
                       ReactiveTextField(
@@ -182,7 +184,9 @@ class _AddMemberBodyState extends State<AddMemberBody> {
                 ),
                 Step(
                   isActive: _currentStep == 1 ? true : false,
-                  state: _currentStep == 1 ? StepState.editing : StepState.complete,
+                  state: _currentStep == 1
+                      ? StepState.editing
+                      : StepState.complete,
                   title: const Text('Campus Information'),
                   content: Column(
                     children: <Widget>[
@@ -228,16 +232,29 @@ class _AddMemberBodyState extends State<AddMemberBody> {
               onStepCancel: cancel,
             ),
           ),
-          Flexible(
-            child: ReactiveFormConsumer(
-              builder: (context, form, child) {
-                return RaisedButton(
-                  child: Text('Submit'),
-                  onPressed: form.valid ? _onSubmit : null,
-                );
-              },
-            ),
-          )
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              Flexible(
+                flex: 2,
+                child: ReactiveFormConsumer(
+                  builder: (context, form, child) {
+                    return RaisedButton(
+                      child: Text('Submit'),
+                      onPressed: form.valid ? _onSubmit : null,
+                    );
+                  },
+                ),
+              ),
+              Flexible(
+                flex: 2,
+                child: RaisedButton(
+                  child: Text('RESET'),
+                  onPressed: () => form.reset(),
+                ),
+              ),
+            ],
+          ),
         ],
       ),
     );
