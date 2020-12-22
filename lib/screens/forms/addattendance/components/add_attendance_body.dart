@@ -11,7 +11,7 @@ class AddAttendanceBody extends StatefulWidget {
 class _AddAttendanceBodyState extends State<AddAttendanceBody> {
   final attendanceForm = FormGroup({
     'typeOfService': FormControl<String>(validators: [Validators.required]),
-    'attendance': FormControl<int>(validators: [Validators.required]),
+    'attendance': FormControl<int>(validators: [Validators.required, Validators.number, Validators.min(0)]),
     'dateOfService': FormControl<DateTime>(validators: [Validators.required])
   });
 

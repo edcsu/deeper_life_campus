@@ -12,7 +12,7 @@ class _AddMemberBodyState extends State<AddFinanceBody> {
 
     final attendanceForm = FormGroup({
     'typeOfService': FormControl<String>(validators: [Validators.required]),
-    'offering': FormControl<int>(validators: [Validators.required]),
+    'offering': FormControl<double>(validators: [Validators.required, Validators.min(0)]),
     'dateOfService': FormControl<DateTime>(validators: [Validators.required])
   });
 
