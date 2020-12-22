@@ -15,27 +15,30 @@ class SignIn extends StatefulWidget {
 }
 
 class _SignInState extends State<SignIn> {
-
   final AuthService _auth = AuthService();
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      body: Container(
-        width: double.infinity,
-        height: size.height,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Container(
+        body: Container(
+      width: double.infinity,
+      height: size.height,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Expanded(
+            flex: 1,
+            child: Container(
               width: size.width * 0.8,
               child: SvgPicture.asset(
                 "assets/images/logo.svg",
                 height: size.height * 0.3,
               ),
             ),
-            Text(
+          ),
+          Flexible(
+            child: Text(
               "LOGIN",
               style: TextStyle(
                 fontWeight: FontWeight.bold,
@@ -43,18 +46,23 @@ class _SignInState extends State<SignIn> {
                 color: kPrimaryColor,
               ),
             ),
-            RoundedInputField(
+          ),
+          Flexible(
+            flex: 1,
+            child: RoundedInputField(
               hintText: "Your Email",
-              onChanged: (value) {
-                
-              },
+              onChanged: (value) {},
             ),
-            RoundedPasswordField(
-              onChanged: (value) {
-                
-              },
+          ),
+          Flexible(
+            flex: 1,
+            child: RoundedPasswordField(
+              onChanged: (value) {},
             ),
-            RoundedButton(
+          ),
+          Flexible(
+            flex: 1,
+            child: RoundedButton(
               text: "LOGIN",
               press: () {
                 Navigator.push(
@@ -67,11 +75,9 @@ class _SignInState extends State<SignIn> {
                 );
               },
             ),
-          ],
-        ),
-      )
-    );
+          ),
+        ],
+      ),
+    ));
   }
 }
-
-

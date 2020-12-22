@@ -1,5 +1,4 @@
 import 'package:deeper_life_campus/screens/authenticate/authenticate.dart';
-import 'package:deeper_life_campus/screens/home/home.dart';
 import 'package:flutter/material.dart';
 
 class Wrapper extends StatelessWidget {
