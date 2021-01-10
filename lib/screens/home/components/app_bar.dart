@@ -7,7 +7,7 @@ AppBar homeAppBar() {
       automaticallyImplyLeading: false,
       backgroundColor: kPrimaryColor,
       title: Text(
-        "Deeper Life Campus Fellowship Uganda",
+        "Deeper Life Campus Fellowship",
         style: TextStyle(
         ),
       ),
