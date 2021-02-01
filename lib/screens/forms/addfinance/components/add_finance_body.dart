@@ -24,11 +24,24 @@ class _AddMemberBodyState extends State<AddFinanceBody> {
         padding: const EdgeInsets.all(20.0),
         child: Column(
           children: <Widget>[
-            ReactiveTextField(
+            ReactiveDropdownField<String>(
               formControlName: 'typeOfService',
-              decoration: InputDecoration(
-                labelText: 'Type Of Service',
-              ),
+              decoration:
+                  InputDecoration(labelText: 'Select Type Of Service...'),
+              items: [
+                DropdownMenuItem(
+                  value: "Sunday Service",
+                  child: Text('Sunday Service'),
+                ),
+                DropdownMenuItem(
+                  value: "Thursday Service",
+                  child: Text('Thursday Service'),
+                ),
+                DropdownMenuItem(
+                  value: "Bible Study",
+                  child: Text('Bible Study'),
+                ),
+              ],
             ),
             SizedBox(height: 20.0),
             ReactiveTextField(
