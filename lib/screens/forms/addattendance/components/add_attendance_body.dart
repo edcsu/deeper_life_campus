@@ -30,7 +30,7 @@ class _AddAttendanceBodyState extends State<AddAttendanceBody> {
             ReactiveDropdownField<String>(
               formControlName: 'typeOfService',
               decoration:
-                  InputDecoration(labelText: 'Select Type Of Service...'),
+                  InputDecoration(labelText: 'Select type of service...'),
               items: [
                 DropdownMenuItem(
                   value: "Sunday Service",
