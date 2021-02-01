@@ -1,22 +1,20 @@
 import 'package:deeper_life_campus/constants.dart';
-import 'package:deeper_life_campus/screens/forms/addmember/components/add_member_body.dart';
+import 'package:deeper_life_campus/screens/forms/addmember/components/AddStudent/body.dart';
 import 'package:flutter/material.dart';
 
-class AddMember extends StatelessWidget {
-  AddMember({Key key}) : super(key: key);
+class AddStudent extends StatelessWidget {
+  const AddStudent({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
         appBar: AppBar(
           backgroundColor: kPrimaryColor,
           title: Text(
-            "Add a member",
+            "Add student",
             style: TextStyle(),
           ),
         ),
-        body: AddMemberBody());
+        body: AddStudentBody());
   }
 }
-
