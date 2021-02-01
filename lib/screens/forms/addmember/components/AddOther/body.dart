@@ -16,7 +16,7 @@ class _AddOtherBodyState extends State<AddOtherBody> {
         validators: [Validators.required, Validators.email]),
     'phoneNumber': FormControl<String>(validators: [Validators.required]),
     'dateOfBirth': FormControl<DateTime>(validators: [Validators.required]),
-    'occupation': FormControl<String>(validators: [Validators.required])
+    'occupation': FormControl<String>()
   });
 
   List<Step> steps = [
@@ -199,9 +199,9 @@ class _AddOtherBodyState extends State<AddOtherBody> {
                   content: Column(
                     children: <Widget>[
                       ReactiveTextField(
-                        formControlName: 'occupation(optional)',
+                        formControlName: 'occupation',
                         decoration: InputDecoration(
-                          labelText: 'occupation',
+                          labelText: 'Occupation (optional)',
                         ),
                       ),
                     ],
