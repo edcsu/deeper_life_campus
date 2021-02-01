@@ -16,11 +16,7 @@ class _AddOtherBodyState extends State<AddOtherBody> {
         validators: [Validators.required, Validators.email]),
     'phoneNumber': FormControl<String>(validators: [Validators.required]),
     'dateOfBirth': FormControl<DateTime>(validators: [Validators.required]),
-    'department': FormControl<String>(validators: [Validators.required]),
-    'program': FormControl<String>(validators: [Validators.required]),
-    'country': FormControl<String>(validators: [Validators.required]),
-    'yearEnrolled': FormControl<DateTime>(validators: [Validators.required]),
-    'yearGraduated': FormControl<DateTime>(validators: [Validators.required]),
+    'occupation': FormControl<String>(validators: [Validators.required])
   });
 
   List<Step> steps = [
@@ -199,64 +195,14 @@ class _AddOtherBodyState extends State<AddOtherBody> {
                   state: _currentStep == 1
                       ? StepState.editing
                       : StepState.complete,
-                  title: const Text('Campus Information'),
+                  title: const Text('Other Information'),
                   content: Column(
                     children: <Widget>[
                       ReactiveTextField(
-                        formControlName: 'department',
+                        formControlName: 'occupation(optional)',
                         decoration: InputDecoration(
-                          labelText: 'Department',
+                          labelText: 'occupation',
                         ),
-                      ),
-                      ReactiveTextField(
-                        formControlName: 'program',
-                        decoration: InputDecoration(
-                          labelText: 'Program',
-                        ),
-                      ),
-                      ReactiveTextField(
-                        formControlName: 'country',
-                        decoration: InputDecoration(
-                          labelText: 'country',
-                        ),
-                      ),
-                      ReactiveTextField(
-                        formControlName: 'yearEnrolled',
-                        readOnly: true,
-                        decoration: InputDecoration(
-                          labelText: 'Year Enrolled',
-                          suffixIcon: ReactiveDatePicker(
-                            formControlName: 'yearEnrolled',
-                            firstDate: DateTime(1960),
-                            lastDate: DateTime(2099),
-                            builder: (context, picker, child) {
-                              return IconButton(
-                                onPressed: picker.showPicker,
-                                icon: Icon(Icons.date_range),
-                              );
-                            },
-                          ),
-                        ),
-                        keyboardType: TextInputType.number,
-                      ),
-                      ReactiveTextField(
-                        formControlName: 'yearGraduated',
-                        readOnly: true,
-                        decoration: InputDecoration(
-                          labelText: 'Year Graduated',
-                          suffixIcon: ReactiveDatePicker(
-                            formControlName: 'yearGraduated',
-                            firstDate: DateTime(1960),
-                            lastDate: DateTime(2099),
-                            builder: (context, picker, child) {
-                              return IconButton(
-                                onPressed: picker.showPicker,
-                                icon: Icon(Icons.date_range),
-                              );
-                            },
-                          ),
-                        ),
-                        keyboardType: TextInputType.number,
                       ),
                     ],
                   ),
