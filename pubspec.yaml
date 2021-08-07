@@ -26,7 +26,7 @@ dependencies:
   intl: ^0.16.1
   path_provider: ^1.6.10
   http: ^0.12.1
-  flutter_svg: ^0.17.0
+  flutter_svg: ^0.19.3
   splashscreen: ^1.3.5
   gradient_widgets: ^0.5.1
   reactive_forms: ^7.6.2

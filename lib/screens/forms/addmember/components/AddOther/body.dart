@@ -221,7 +221,7 @@ class _AddOtherBodyState extends State<AddOtherBody> {
                 flex: 2,
                 child: ReactiveFormConsumer(
                   builder: (context, form, child) {
-                    return RaisedButton(
+                    return ElevatedButton(
                       child: Text('Submit'),
                       onPressed: form.valid ? _onSubmit : null,
                     );
@@ -230,7 +230,7 @@ class _AddOtherBodyState extends State<AddOtherBody> {
               ),
               Flexible(
                 flex: 2,
-                child: RaisedButton(
+                child: ElevatedButton(
                   child: Text('RESET'),
                   onPressed: () => form.reset(),
                 ),

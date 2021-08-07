@@ -33,8 +33,8 @@ class _HomeState extends State<Home> {
         onTap: _changeIndex, 
         type: BottomNavigationBarType.fixed, 
         items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home), title: Text("Home")), 
-          BottomNavigationBarItem(icon: Icon(Icons.account_circle), title: Text("My Account")), 
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"), 
+          BottomNavigationBarItem(icon: Icon(Icons.account_circle), label: "My Account"), 
         ], 
       ),
     );
